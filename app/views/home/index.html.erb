@@ -11,8 +11,10 @@
 
     <section>
 
-      <form ng-show="trainCtrl.showMobile" ng-submit="">
-        <input type="number" mg-model="trainCtrl.mobileNumber" placeholder="Mobile phone number"></input>
+      <form ng-show="trainCtrl.showMobile" method="post" action="/notifications">
+        <input type="number" name="mobile" placeholder="Mobile phone number"></input>
+        <input type="hidden" name="time" value="{{trainCtrl.trainTime}}"></input>
+        <input type="hidden" name="station" value="{{trainCtrl.depart}}"></input>
         <button type="submit">Go!</button>
       </form>
 
