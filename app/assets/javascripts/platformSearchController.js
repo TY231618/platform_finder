@@ -14,5 +14,8 @@ trainPlatformSearch.controller('trainPlatformSearchController', ['Search', funct
     self.showMobile = true;
   };
 
+  // self.createTrainCheck = function(number, ) {
+  //
+  // };
 
 }]);
