@@ -1,0 +1,22 @@
+<section ng-app="platformSearch">
+  <section ng-controller="trainPlatformSearchController as trainCtrl">
+
+    <form ng-submit="trainCtrl.doSearch(trainCtrl.depart, trainCtrl.finish)">
+      <input type="text" ng-model="trainCtrl.depart"></input>
+      <br>
+      <input type="text" ng-model="trainCtrl.finish"></input>
+      <br>
+      <button type="submit">Search</button>
+    </form>
+
+    <section>
+      <p>Showing trains from {{trains.depart}}</p>
+      <ul>
+        <li ng-repeat="train in trainCtrl.trainsResult">
+          <span>Time: {{train.std}}, Destination: {{trains.destination.locationName}} Platform: {{train.platform}}</span>
+        </li>
+      </ul>
+    </section>
+
+  </section>
+</section>
