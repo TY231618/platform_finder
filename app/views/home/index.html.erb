@@ -2,9 +2,11 @@
   <section ng-controller="trainPlatformSearchController as trainCtrl">
 
     <form ng-submit="trainCtrl.doSearch(trainCtrl.depart, trainCtrl.finish)">
-      <input type="text" ng-model="trainCtrl.depart"></input>
+      <input type="text" ng-model="trainCtrl.depart" placeholder="Where are you now?" autofocus></input>
       <br>
-      <input type="text" ng-model="trainCtrl.finish"></input>
+      <br>
+      <input type="text" ng-model="trainCtrl.finish" placeholder="Where are you going?"></input>
+      <br>
       <br>
       <button type="submit" ng-click="trainCtrl.showMobile=false">Search</button>
     </form>
