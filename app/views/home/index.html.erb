@@ -6,14 +6,20 @@
       <br>
       <input type="text" ng-model="trainCtrl.finish"></input>
       <br>
-      <button type="submit">Search</button>
+      <button type="submit" ng-click="trainCtrl.showMobile=false">Search</button>
     </form>
 
     <section>
+
+      <form ng-show="trainCtrl.showMobile" ng-submit="">
+        <input type="number" mg-model="trainCtrl.mobileNumber" placeholder="Mobile phone number"></input>
+        <button type="submit">Go!</button>
+      </form>
+
       <p>Showing trains from {{trains.depart}}</p>
       <ul>
         <li ng-repeat="train in trainCtrl.trainsResult">
-          <span>Time: {{train.std}}, Destination: {{trains.destination.locationName}} Platform: {{train.platform}}</span>
+          <span ng-click="trainCtrl.setsSelectedTrain(train.std)">Time: {{train.std}}, Destination: {{train.destination[0].locationName}} Platform: {{train.platform}}</span>
         </li>
       </ul>
     </section>
