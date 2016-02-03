@@ -6,7 +6,7 @@ This is a solution to a challenge given by Makers Academy on week 9, part of Lea
 The aim of the challenge.
 -------------------------
 
-Create an application that will help a user receive their train platform number via a text message. Technologies to be used AngularJS, HTML and CSS.
+Create an application that will help a user receive their train platform number via a text message. Technologies used include AngularJS, Ruby on Rails, HTML, Redis, Sidekiq, Twilio.
 
 User stories
 ------------
@@ -33,7 +33,7 @@ I would like to receive a text notification for the platform number.
 
 * Deploy the app
 * Create a persistance layer (e.g. MongoDB), or use LocalStorage or the filesystem through Node
-* Make it look purdy (CSS) - try a framework like Bootstrap or Foundation
+* Make it look purdy (CSS)
 
 
 Technologies used
@@ -46,11 +46,9 @@ Technologies used
 
 
   * Back end framework
-    * JavaScript
+    * Ruby on Rails
 
 
   * Front end framework
     * AngularJS
-    * jQuery
-    * CSS
-    * Bootstrap
+    
