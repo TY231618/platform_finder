@@ -1,3 +1,39 @@
 // Place all the styles related to the home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+body{
+  font-family: Helvetica;
+}
+
+.search {
+  text-align: center;
+}
+
+.search_form > input[type="text"]{
+  width: 500px;
+  height: 2em;
+  text-align: center;
+  font-size: 2em;
+  font-family: Helvetica;
+  margin-top: 50px;
+
+}
+
+.search_form > button{
+  width: 250px;
+  height: 2em;
+  text-align: center;
+  font-size: 2em;
+  font-family: Helvetica;
+  margin-top: 50px;
+  border-radius: 10px;
+
+}
+
+ul {
+  list-style-type: none;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
