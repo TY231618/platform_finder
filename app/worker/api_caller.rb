@@ -18,4 +18,8 @@ class ApiCaller
       end
     end
   end
+
+  private
+
+  
 end
