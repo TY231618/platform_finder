@@ -20,7 +20,7 @@
         <button type="submit">Go!</button>
       </form>
 
-      <p>Showing trains from {{trains.depart}}</p>
+      <p>Showing trains from {{trainCtrl.depart}}</p>
       <ul>
         <li ng-repeat="train in trainCtrl.trainsResult">
           <span ng-click="trainCtrl.setsSelectedTrain(train.std)">Time: {{train.std}}, Destination: {{train.destination[0].locationName}} Platform: {{train.platform}}</span>
