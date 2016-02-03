@@ -9,4 +9,9 @@ trainPlatformSearch.controller('trainPlatformSearchController', ['Search', funct
       });
   };
 
+  self.setsSelectedTrain = function(time) {
+    self.trainTime = time;
+    self.showMobile = true;
+  };
+
 }]);

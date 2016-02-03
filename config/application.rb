@@ -9,11 +9,16 @@ require "action_controller/railtie"
 require "action_mailer/railtie"
 require "action_view/railtie"
 require "sprockets/railtie"
+require "httparty"
 # require "rails/test_unit/railtie"
 
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
+
+Dotenv::Railtie.load
+
+HOSTNAME = ENV['HOSTNAME']
 
 module PlatformFinder
   class Application < Rails::Application
@@ -28,7 +33,6 @@ module PlatformFinder
     # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     # config.i18n.default_locale = :de
-
     config.assets.paths << Rails.root.join("vendor","assets","bower_components")
     config.assets.precompile << %r(.*.(?:eot|svg|ttf|woff|woff2)$)
 
