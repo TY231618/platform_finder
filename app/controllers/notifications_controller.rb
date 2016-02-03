@@ -4,7 +4,6 @@ class NotificationsController < ApplicationController
 
   def create
     ApiCaller.perform_async(params[:mobile], params[:time], params[:station], params[:destination])
-    # SendTextWhenPlatformReadyJob.perform_later
     redirect_to root_path
   end
 
