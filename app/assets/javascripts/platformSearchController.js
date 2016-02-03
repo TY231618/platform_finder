@@ -5,7 +5,6 @@ trainPlatformSearch.controller('trainPlatformSearchController', ['Search', funct
   self.doSearch = function() {
     Search.query(self.depart, self.finish)
       .then(function(responce) {
-        console.log(responce);
         self.trainsResult = responce.data.trainServices;
       });
   };
