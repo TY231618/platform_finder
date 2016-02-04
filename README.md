@@ -8,6 +8,27 @@ The aim of the challenge.
 
 Create an application that will help a user receive their train platform number via a text message. Technologies to be used AngularJS, HTML and CSS.
 
+To Install
+
+* Clone this repo and ```$ cd ``` into it.
+* Install dependencies using ```bundle```, ```$ npm install``` and ```$ rake bower:install```
+* Install Redis using ```$ brew install redis```
+* Create the database with ```$ rake db:create```
+
+To Run
+
+* Start the Redis server using ```$ redis-server```
+* Start Sidekiq with ```$ bundle exec sidekiq```
+* Start the app with ```$ rails s```
+* Point your browser at ```http://localhost:3000```
+
+To use
+
+* Enter your starting station and your finishing station and hit submit.
+* From the list of trains, select your train.
+* Enter your mobile phone number.
+* If your trains platform information is available you will receive a text immediately. Otherwise it will arrive when ready. 
+
 User stories
 ------------
 ```
