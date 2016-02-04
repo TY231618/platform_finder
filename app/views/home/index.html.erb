@@ -1,7 +1,7 @@
 <section ng-app="platformSearch">
   <section ng-controller="trainPlatformSearchController as trainCtrl">
 
-    <form ng-submit="trainCtrl.doSearch(trainCtrl.depart, trainCtrl.finish)">
+    <!-- <form ng-submit="trainCtrl.doSearch(trainCtrl.depart, trainCtrl.finish)">
       <input type="text" ng-model="trainCtrl.depart"></input>
       <br>
       <input type="text" ng-model="trainCtrl.finish"></input>
@@ -26,7 +26,44 @@
           <span ng-click="trainCtrl.setsSelectedTrain(train.std)">Time: {{train.std}}, Destination: {{train.destination[0].locationName}} Platform: {{train.platform}}</span>
         </li>
       </ul>
-    </section>
+    </section> -->
 
+
+
+    <h1>U.K. Platform Finder</h1>
+		<br />
+		<div ng-controller="trainPlatformSearchController as trainCtrl">
+			<h3>Entry Station</h3>
+			<div class="large-padded-row">
+				<div class="padded-row">
+					<angucomplete id="entryStation" placeholder="Search stations"
+						pause="100" selectedobject="selectedStation" localdata="stations"
+						searchfields="name" titlefield="name" minlength="1"
+						inputclass="form-control form-control-small" matchclass="highlight"/>
+				</div>
+				<div class="" ng-show="selectedStation">
+					You selected <span class="bold-span">{{selectedStation.originalObject.name}}</span>
+					 which has a code of <span class="bold-span">{{selectedStation.originalObject.code}}</span>
+				</div>
+			</div>
+		</div>
+		<br />
+
+    <div ng-controller="trainPlatformSearchController as trainCtrl">
+			<h3>Exit Station</h3>
+			<div class="large-padded-row">
+				<div class="padded-row">
+					<angucomplete id="entryStation" placeholder="Search stations"
+						pause="100" selectedobject="selectedStation" localdata="stations"
+						searchfields="name" titlefield="name" minlength="1"
+						inputclass="form-control form-control-small" matchclass="highlight"/>
+				</div>
+				<div class="" ng-show="selectedStation">
+					You selected <span class="bold-span">{{selectedStation.originalObject.name}}</span>
+					 which has a code of <span class="bold-span">{{selectedStation.originalObject.code}}</span>
+				</div>
+			</div>
+		</div>
+        
   </section>
 </section>

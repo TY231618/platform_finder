@@ -1,1 +1,1 @@
-var trainPlatformSearch = angular.module('platformSearch', []);
+var trainPlatformSearch = angular.module('platformSearch', ["ngTouch", "angucomplete"]);
