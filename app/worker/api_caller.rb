@@ -1,4 +1,5 @@
 require './lib/text.rb'
+require 'sidekiq'
 
 class ApiCaller
 
