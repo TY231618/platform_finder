@@ -39,8 +39,8 @@
 			<div class="large-padded-row">
 				<div class="padded-row">
 					<angucomplete id="entryStation" placeholder="Search stations"
-						pause="100" selectedobject="selectedStation" localdata="stations"
-						searchfields="name" titlefield="name" minlength="1"
+						pause="100" selectedobject="selectedStation" localdata=trainCtrl.stations
+						searchfields="name" titlefield="name" minlength="3"
 						inputclass="form-control form-control-small" matchclass="highlight"/>
 				</div>
 				<div class="" ng-show="selectedStation">
@@ -56,8 +56,8 @@
 			<div class="large-padded-row">
 				<div class="padded-row">
 					<angucomplete id="entryStation" placeholder="Search stations"
-						pause="100" selectedobject="selectedStation" localdata="stations"
-						searchfields="name" titlefield="name" minlength="1"
+						pause="100" selectedobject="selectedStation" localdata="trainCtrl.stations"
+						searchfields="name" titlefield="name" minlength="3"
 						inputclass="form-control form-control-small" matchclass="highlight"/>
 				</div>
 				<div class="" ng-show="selectedStation">
@@ -66,6 +66,5 @@
 				</div>
 			</div>
 		</div>
-
   </section>
 </section>

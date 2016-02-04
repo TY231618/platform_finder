@@ -1,33 +1,18 @@
-// trainPlatformSearch.controller('trainPlatformSearchController', ['Search', function(Search) {
-//
-//   var self = this;
-//
-//   self.doSearch = function() {
-//     Search.query(self.depart, self.finish)
-//       .then(function(responce) {
-//         self.trainsResult = responce.data.trainServices;
-//       });
-//   };
-//
-//   self.setsSelectedTrain = function(time) {
-//     self.trainTime = time;
-//     self.showMobile = true;
-//   };
-//
-// }]);
+trainPlatformSearch.controller('trainPlatformSearchController', ['Search', function(Search) {
 
-trainPlatformSearch.controller('trainPlatformSearchController', ['$scope', function ($scope) {
-  $scope.stations = list;
+  this.stations = list;
+  var self = this;
 
-  $scope.doSearch = function() {
-    Search.query($scope.depart, $scope.finish)
+  self.doSearch = function() {
+    Search.query(self.depart, self.finish)
       .then(function(responce) {
-        $scope.trainsResult = responce.data.trainServices;
+        self.trainsResult = responce.data.trainServices;
       });
   };
 
-  $scope.setsSelectedTrain = function(time) {
-    $scope.trainTime = time;
-    $scope.showMobile = true;
+  self.setsSelectedTrain = function(time) {
+    self.trainTime = time;
+    self.showMobile = true;
   };
+
 }]);
