@@ -5,6 +5,7 @@
 body{
   background-image: url(https://picjumbo.imgix.net/HNCK3273.jpg?q=40&w=1650&sharp=30);
   font-family: Helvetica;
+  height: 100%;
 }
 
 .title {
@@ -57,13 +58,4 @@ ul {
 .train_list {
   list-style-type: none;
 
-}
-
-#footer {
-  text-align: center;
-  position: absolute;
-  bottom: 0;
-  height: 70px;
-  background-color: #e6e6e6;
-  width: 100%;
 }
