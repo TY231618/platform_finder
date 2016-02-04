@@ -16,9 +16,18 @@
 //
 // }]);
 
-trainPlatformSearch.controller('trainPlatformSearchController', ['$scope',
-  function ($scope) {
+trainPlatformSearch.controller('trainPlatformSearchController', ['$scope', function ($scope) {
+  $scope.stations = list;
 
-    $scope.stations = list;
-  }
-]);
+  $scope.doSearch = function() {
+    Search.query($scope.depart, $scope.finish)
+      .then(function(responce) {
+        $scope.trainsResult = responce.data.trainServices;
+      });
+  };
+
+  $scope.setsSelectedTrain = function(time) {
+    $scope.trainTime = time;
+    $scope.showMobile = true;
+  };
+}]);

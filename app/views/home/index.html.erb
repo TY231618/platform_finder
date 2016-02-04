@@ -1,7 +1,7 @@
 <section ng-app="platformSearch">
   <section ng-controller="trainPlatformSearchController as trainCtrl">
 
-    <!-- <form ng-submit="trainCtrl.doSearch(trainCtrl.depart, trainCtrl.finish)">
+    <form ng-submit="trainCtrl.doSearch(trainCtrl.depart, trainCtrl.finish)">
       <input type="text" ng-model="trainCtrl.depart"></input>
       <br>
       <input type="text" ng-model="trainCtrl.finish"></input>
@@ -26,8 +26,10 @@
           <span ng-click="trainCtrl.setsSelectedTrain(train.std)">Time: {{train.std}}, Destination: {{train.destination[0].locationName}} Platform: {{train.platform}}</span>
         </li>
       </ul>
-    </section> -->
+    </section>
 
+  <br />
+  <br />
 
 
     <h1>U.K. Platform Finder</h1>
@@ -64,6 +66,6 @@
 				</div>
 			</div>
 		</div>
-        
+
   </section>
 </section>
