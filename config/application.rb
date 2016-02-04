@@ -16,9 +16,9 @@ require "httparty"
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
 
-Dotenv::Railtie.load
-
-HOSTNAME = ENV['HOSTNAME']
+# Dotenv::Railtie.load
+#
+# HOSTNAME = ENV['HOSTNAME']
 
 module PlatformFinder
   class Application < Rails::Application

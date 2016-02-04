@@ -1,10 +1,10 @@
-<section ng-app="platformSearch">
+<section class="search" ng-app="platformSearch">
   <section ng-controller="trainPlatformSearchController as trainCtrl">
 
-    <form ng-submit="trainCtrl.doSearch(trainCtrl.depart, trainCtrl.finish)">
-      <input type="text" ng-model="trainCtrl.depart"></input>
+    <form class="search_form" ng-submit="trainCtrl.doSearch(trainCtrl.depart, trainCtrl.finish)">
+      <input id="starting_station" type="text" ng-model="trainCtrl.depart" placeholder="Where are you now?" autofocus></input>
       <br>
-      <input type="text" ng-model="trainCtrl.finish"></input>
+      <input id="finish_station" type="text" ng-model="trainCtrl.finish" placeholder="Where are you going?"></input>
       <br>
       <button type="submit" ng-click="trainCtrl.showMobile=false">Search</button>
     </form>
@@ -21,9 +21,9 @@
       </form>
 
       <p>Showing trains from {{trainCtrl.depart}}</p>
-      <ul>
+      <ul class="list">
         <li ng-repeat="train in trainCtrl.trainsResult">
-          <span ng-click="trainCtrl.setsSelectedTrain(train.std)">Time: {{train.std}}, Destination: {{train.destination[0].locationName}} Platform: {{train.platform}}</span>
+          <span ng-click="trainCtrl.setsSelectedTrain(train.std)">Time: {{train.std}}, Destination: {{train.destination[0].locationName}} Platform: {{train.platform || "TBA"}}</span>
         </li>
       </ul>
     </section>

@@ -4,6 +4,10 @@ class ApiCaller
 
   include Sidekiq::Worker
 
+  def initialize(text_klass = Text)
+    @text = text_klass
+  end
+
   def perform(mobile, time, start_station, end_station)
     check_with_API_every_10s(mobile, time, start_station, end_station)
   end
@@ -19,6 +23,7 @@ class ApiCaller
   end
 
   def check_with_API_every_10s(mobile, time, start_station, end_station)
+
     complete = false
     until complete == true
       response = contact_api(start_station, end_station)
@@ -34,7 +39,7 @@ class ApiCaller
   end
 
   def send_text(mobile, selected_train)
-    Text.send_platform(mobile, selected_train.first['platform'])
+    @text.send_platform(mobile, selected_train.first['platform'])
   end
 
 
