@@ -1,12 +1,15 @@
-<section class="search" ng-app="platformSearch">
-  <section ng-controller="trainPlatformSearchController as trainCtrl">
 
+<section class="search" ng-app="platformSearch">
+  <section class="title">
+    Platformation
+  </section>
+  <section ng-controller="trainPlatformSearchController as trainCtrl">
     <form class="search_form" ng-submit="trainCtrl.doSearch(trainCtrl.depart, trainCtrl.finish)">
       <input id="starting_station" type="text" ng-model="trainCtrl.depart" placeholder="Where are you now?" autofocus></input>
       <br>
       <input id="finish_station" type="text" ng-model="trainCtrl.finish" placeholder="Where are you going?"></input>
       <br>
-      <button type="submit" ng-click="trainCtrl.showMobile=false">Search</button>
+      <button class="btn btn-success btn-xs" type="submit" ng-click="trainCtrl.showMobile=false">Search</button>
     </form>
 
     <section>
@@ -17,7 +20,7 @@
         <input type="hidden" name="station" value="{{trainCtrl.depart}}"></input>
         <input type="hidden" name="destination" value="{{trainCtrl.finish}}"></input>
 
-        <button type="submit">Go!</button>
+        <button class="btn btn-success btn-xs" type="submit">Go!</button>
       </form>
 
       <p>Showing trains from {{trainCtrl.depart}}</p>

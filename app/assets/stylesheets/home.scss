@@ -3,7 +3,18 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 body{
+  background-image: url(https://picjumbo.imgix.net/HNCK3273.jpg?q=40&w=1650&sharp=30);
   font-family: Helvetica;
+}
+
+.title {
+  padding-top: 15px;
+  color: #4278a1;
+  font-family: 'Droid serif', serif;
+  font-size: 80px; font-weight: 400;
+  font-style: italic; line-height: 44px;
+  margin: 0 0 12px;
+  text-align: center;
 }
 
 .search {
