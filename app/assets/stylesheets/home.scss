@@ -42,6 +42,10 @@ body{
 
 }
 
+.confirmation {
+  text-align: center;
+}
+
 ul {
   list-style-type: none;
   text-align: justify;
@@ -53,4 +57,13 @@ ul {
 .train_list {
   list-style-type: none;
 
+}
+
+#footer {
+  text-align: center;
+  position: absolute;
+  bottom: 0;
+  height: 70px;
+  background-color: #e6e6e6;
+  width: 100%;
 }
