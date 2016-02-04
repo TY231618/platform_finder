@@ -1,19 +1,29 @@
-<section ng-app="platformSearch">
+<section class="search" ng-app="platformSearch">
   <section ng-controller="trainPlatformSearchController as trainCtrl">
 
-    <form ng-submit="trainCtrl.doSearch(trainCtrl.depart, trainCtrl.finish)">
-      <input type="text" ng-model="trainCtrl.depart"></input>
+    <form class="search_form" ng-submit="trainCtrl.doSearch(trainCtrl.depart, trainCtrl.finish)">
+      <input id="starting_station" type="text" ng-model="trainCtrl.depart" placeholder="Where are you now?" autofocus></input>
       <br>
-      <input type="text" ng-model="trainCtrl.finish"></input>
+      <input id="finish_station" type="text" ng-model="trainCtrl.finish" placeholder="Where are you going?"></input>
       <br>
-      <button type="submit">Search</button>
+      <button type="submit" ng-click="trainCtrl.showMobile=false">Search</button>
     </form>
 
     <section>
-      <p>Showing trains from {{trains.depart}}</p>
-      <ul>
+
+      <form ng-show="trainCtrl.showMobile" method="post" action="/notifications">
+        <input type="number" name="mobile" placeholder="Mobile phone number"></input>
+        <input type="hidden" name="time" value="{{trainCtrl.trainTime}}"></input>
+        <input type="hidden" name="station" value="{{trainCtrl.depart}}"></input>
+        <input type="hidden" name="destination" value="{{trainCtrl.finish}}"></input>
+
+        <button type="submit">Go!</button>
+      </form>
+
+      <p>Showing trains from {{trainCtrl.depart}}</p>
+      <ul class="list">
         <li ng-repeat="train in trainCtrl.trainsResult">
-          <span>Time: {{train.std}}, Destination: {{trains.destination.locationName}} Platform: {{train.platform}}</span>
+          <span ng-click="trainCtrl.setsSelectedTrain(train.std)">Time: {{train.std}}, Destination: {{train.destination[0].locationName}} Platform: {{train.platform || "TBA"}}</span>
         </li>
       </ul>
     </section>
