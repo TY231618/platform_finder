@@ -1,6 +1,9 @@
-<section class="search" ng-app="platformSearch">
-  <section ng-controller="trainPlatformSearchController as trainCtrl">
 
+<section class="search" ng-app="platformSearch">
+  <section class="title">
+    Platformation
+  </section>
+  <section ng-controller="trainPlatformSearchController as trainCtrl">
       <angucomplete id="entryStation" placeholder="Departing station"
         pause="100" selectedobject="entryStation" localdata=trainCtrl.stations
         searchfields="name" titlefield="name" minlength="3"
@@ -13,8 +16,8 @@
         inputclass="form-control form-control-small" matchclass="highlight">
       </angucomplete>
       <br>
-
       <button ng-click="trainCtrl.setStations(entryStation.originalObject.code, exitStation.originalObject.code)">Go!</button>
+
 
     <section>
 
