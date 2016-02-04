@@ -33,7 +33,13 @@ body{
 
 ul {
   list-style-type: none;
+  text-align: justify;
   width: 100%;
   margin: 0;
-  padding: 0;
+  padding-left: 250px;
+}
+
+.train_list {
+  list-style-type: none;
+
 }
