@@ -1,27 +1,33 @@
 <section class="search" ng-app="platformSearch">
   <section ng-controller="trainPlatformSearchController as trainCtrl">
 
-    <form class="search_form" ng-submit="trainCtrl.doSearch(trainCtrl.depart, trainCtrl.finish)">
-      <input id="starting_station" type="text" ng-model="trainCtrl.depart" placeholder="Where are you now?" autofocus></input>
+      <angucomplete id="entryStation" placeholder="Departing station"
+        pause="100" selectedobject="entryStation" localdata=trainCtrl.stations
+        searchfields="name" titlefield="name" minlength="3"
+        inputclass="form-control form-control-small" matchclass="highlight">
+      </angucomplete>
       <br>
-      <input id="finish_station" type="text" ng-model="trainCtrl.finish" placeholder="Where are you going?"></input>
+      <angucomplete id="exitStation" placeholder="Destination"
+        pause="100" selectedobject="exitStation" localdata="trainCtrl.stations"
+        searchfields="name" titlefield="name" minlength="3"
+        inputclass="form-control form-control-small" matchclass="highlight">
+      </angucomplete>
       <br>
-      <button type="submit" ng-click="trainCtrl.showMobile=false">Search</button>
-    </form>
+
+      <button id="searchBtn" ng-click="trainCtrl.setStations(entryStation.originalObject.code, exitStation.originalObject.code)">Search!</button>
 
     <section>
 
       <form ng-show="trainCtrl.showMobile" method="post" action="/notifications">
-        <input type="number" name="mobile" placeholder="Mobile phone number"></input>
+        <input id="numberInput" type="number" name="mobile" placeholder="Mobile phone number"></input>
         <input type="hidden" name="time" value="{{trainCtrl.trainTime}}"></input>
         <input type="hidden" name="station" value="{{trainCtrl.depart}}"></input>
         <input type="hidden" name="destination" value="{{trainCtrl.finish}}"></input>
-
-        <button type="submit">Go!</button>
+        <button id="submitBtn" type="submit">Go!</button>
       </form>
 
-      <p>Showing trains from {{trainCtrl.depart}}</p>
-        <section class="train_list"
+      <p id="resultsMessage" ng-show="entryStation.originalObject.name">Showing trains from {{entryStation.originalObject.name}}</p>
+        <section class="train_list">
           <ul class="list">
             <li ng-repeat="train in trainCtrl.trainsResult">
               <span ng-click="trainCtrl.setsSelectedTrain(train.std)">Time: {{train.std}}, Destination: {{train.destination[0].locationName}} Platform: {{train.platform || "TBA"}}</span>
@@ -29,6 +35,10 @@
           </ul>
         </section>
     </section>
+
+  <br />
+  <br />
+
 
   </section>
 </section>

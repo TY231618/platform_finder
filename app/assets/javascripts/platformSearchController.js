@@ -1,6 +1,7 @@
 trainPlatformSearch.controller('trainPlatformSearchController', ['Search', function(Search) {
 
   var self = this;
+  self.stations = list;
 
   self.doSearch = function() {
     Search.query(self.depart, self.finish)
@@ -12,6 +13,12 @@ trainPlatformSearch.controller('trainPlatformSearchController', ['Search', funct
   self.setsSelectedTrain = function(time) {
     self.trainTime = time;
     self.showMobile = true;
+  };
+
+  self.setStations = function(depart, finish) {
+    self.depart = depart;
+    self.finish = finish;
+    self.doSearch();
   };
 
 }]);
