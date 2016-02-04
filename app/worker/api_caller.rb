@@ -1,4 +1,5 @@
 require './lib/text.rb'
+require 'sidekiq'
 
 class ApiCaller
 
@@ -27,7 +28,11 @@ class ApiCaller
     complete = false
     until complete == true
       response = contact_api(start_station, end_station)
-      selected_train = find_train_in_response(response, time)
+      selected_train = find_train_in_response(response, time) || [{'platform': nil}]
+      if selected_train.first == nil
+        selected_train.first = {'platform': nil}
+      end
+      p selected_train
       if selected_train.first['platform'] != nil
         send_text(mobile, selected_train)
         complete = true
@@ -39,7 +44,7 @@ class ApiCaller
   end
 
   def send_text(mobile, selected_train)
-    @text.send_platform(mobile, selected_train.first['platform'])
+    @text.send_platform(mobile: mobile, platform: selected_train.first['platform'])
   end
 
 
