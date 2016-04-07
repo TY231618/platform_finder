@@ -27,7 +27,7 @@ To use
 * Enter your starting station and your finishing station and hit submit.
 * From the list of trains, select your train.
 * Enter your mobile phone number.
-* If your trains platform information is available you will receive a text immediately. Otherwise it will arrive when ready. 
+* If your trains platform information is available you will receive a text immediately. Otherwise it will arrive when ready.
 
 User stories
 ------------
@@ -72,4 +72,7 @@ Technologies used
 
   * Front end framework
     * AngularJS
-    
+
+Screen Shot
+------------
+![Alt text](/public/images/screenshot.png?raw=true)
